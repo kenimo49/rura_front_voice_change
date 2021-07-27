@@ -7,6 +7,7 @@ import Analysis from './components/Analysis'
 import TextVoiceChange from './components/TextVoiceChange'
 import VoiceChangeWorker from './components/VoiceChangeWorker'
 import VoiceChangeShop from './components/VoiceChangeShop'
+import TextToSpeech from './components/TextToSpeech'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <li><Link to="/">音声の取得、再生</Link></li>
           <li><Link to="/analysis">音波の表示</Link></li>
           <li><Link to="/texttovoicechange">テキストボイスチェンジ</Link></li>
+          <li><Link to="/texttospeech">テキストToスピーチ</Link></li>
           <li><Link to="/voice_change_worker">テキストボイスチェンジDEMO_ワーカー</Link></li>
           <li><Link to="/voice_change_shop">テキストボイスチェンジDEMO_店舗</Link></li>
         </ul>
@@ -26,6 +28,7 @@ function App() {
           <Route exact path="/" component={Main} />
           <Route exact path="/analysis" component={Analysis} />
           <Route path="/texttovoicechange" component={TextVoiceChange} />
+          <Route path="/texttospeech" component={TextToSpeech} />
           <Route path="/voice_change_worker" component={VoiceChangeWorker} />
           <Route path="/voice_change_shop" component={VoiceChangeShop} />
         </Switch>

@@ -4,7 +4,7 @@ import React from 'react';
 type MyState = {
   isAudio: boolean
 };
-class Main extends React.Component<{}, MyState> {
+class VoiceChangeWorker extends React.Component<{}, MyState> {
   private remoteVideo?: HTMLVideoElement | null
   constructor(props: any) {
     super(props);
@@ -39,4 +39,4 @@ class Main extends React.Component<{}, MyState> {
 }
 
 // クラスをexport
-export default Main;
+export default VoiceChangeWorker;

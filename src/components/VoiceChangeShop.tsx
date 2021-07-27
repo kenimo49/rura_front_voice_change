@@ -4,7 +4,7 @@ import React from 'react';
 type MyState = {
   isAudio: boolean
 };
-class Main extends React.Component<{}, MyState> {
+class VoiceChangeShop extends React.Component<{}, MyState> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -32,4 +32,4 @@ class Main extends React.Component<{}, MyState> {
 }
 
 // クラスをexport
-export default Main;
+export default VoiceChangeShop;
