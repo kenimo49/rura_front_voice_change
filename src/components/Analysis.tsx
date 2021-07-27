@@ -28,6 +28,11 @@ class Analysis extends React.Component<{}, MyState> {
   }
 
   endRecording = () => {
+    if (this.localMediaStream) {
+      this.localMediaStream.getTracks().forEach(function(track: any) {
+        track.stop();
+      });
+    }
     this.setState({recordingFlg: false})
   }
 
@@ -126,7 +131,7 @@ class Analysis extends React.Component<{}, MyState> {
             this.endRecording()
           }}>解析終了</button>
         </div>
-        <canvas style={{ width: '400px'}} ref={(canvas: HTMLCanvasElement) => (this.canvas = canvas)} />
+        <canvas style={{ width: '400px', backgroundColor: "grey"}} ref={(canvas: HTMLCanvasElement) => (this.canvas = canvas)} />
         <video
           ref={(video: HTMLVideoElement) => (this.localAudio = video)} />
       </div>
