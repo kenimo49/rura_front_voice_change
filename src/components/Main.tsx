@@ -9,6 +9,7 @@ type MyState = {
 class Main extends React.Component<{}, MyState> {
   private localAudio?: HTMLVideoElement | null
   private sound: AnalyserNode | null
+  private localStream: MediaStream | null
   private micAudio: any
   constructor(props: any) {
     super(props);
@@ -19,6 +20,7 @@ class Main extends React.Component<{}, MyState> {
     this.localAudio = null
     this.sound = null
     this.micAudio = null
+    this.localStream = null
   }
 
   setAudio = (event: 'start' | 'stop') => {
@@ -27,13 +29,14 @@ class Main extends React.Component<{}, MyState> {
         this.localAudio.srcObject = null
         this.setState({isAudio: false})
       }
-      this.micAudio = navigator.mediaDevices.getUserMedia({ video: false, audio: true }).then((localStream: MediaStream) => {
-        console.warn('localStream', localStream)
+      this.micAudio = navigator.mediaDevices.getUserMedia({ video: false, audio: true }).then((stream: MediaStream) => {
+        console.warn('localStream', stream)
+        this.localStream = stream
         if (this.localAudio) {
           this.setState({isAudio: true})
-          this.localAudio.srcObject = localStream
+          this.localAudio.srcObject = stream
           this.localAudio.play()
-          this.setAudioVolume(localStream)
+          this.setAudioVolume(stream)
           setInterval(() => {
             if (this.sound) {
               const volume = this.getAudioVolume(this.sound)
@@ -43,11 +46,10 @@ class Main extends React.Component<{}, MyState> {
         }
       })
     } else {
-      if (this.localAudio && this.localAudio.srcObject) {
-        // if(this.micAudio)
-        //   this.micAudio.getTracks().forEach(function(track: any) {
-        //     track.stop();
-        //   });
+      if (this.localAudio && this.localAudio.srcObject && this.localStream) {
+        this.localStream.getTracks().forEach(function(track: any) {
+          track.stop();
+        });
         this.localAudio.srcObject = null
         this.setState({isAudio: false})
       };
