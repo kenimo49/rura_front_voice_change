@@ -1,5 +1,6 @@
 import React from 'react';
 import Analysis from './Analysis'
+import TextVoiceChange from './TextVoiceChange'
 
 
 type MyState = {
@@ -98,7 +99,6 @@ class Main extends React.Component<{}, MyState> {
           <video style={{height: '0px'}}
               ref={(video: HTMLVideoElement) => (this.localAudio = video)} />
         </div>
-        <Analysis />
       </>
     );
   }
