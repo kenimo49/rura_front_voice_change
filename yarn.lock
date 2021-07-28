@@ -1818,7 +1818,7 @@
 
 "@types/react-router-dom@^5.1.8":
   version "5.1.8"
-  resolved "https://registry.yarnpkg.com/@types/react-router-dom/-/react-router-dom-5.1.8.tgz#bf3e1c8149b3d62eaa206d58599de82df0241192"
+  resolved "https://registry.npmjs.org/@types/react-router-dom/-/react-router-dom-5.1.8.tgz"
   integrity sha512-03xHyncBzG0PmDmf8pf3rehtjY0NpUj7TIN46FrT5n1ZWHPZvXz32gUyNboJ+xsL8cpg8bQVLcllptcQHvocrw==
   dependencies:
     "@types/history" "*"
@@ -9438,7 +9438,7 @@ react-speech@^1.0.2:
 
 react@^16.10.1:
   version "16.14.0"
-  resolved "https://registry.npmjs.org/react/-/react-16.14.0.tgz"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.14.0.tgz#94d776ddd0aaa37da3eda8fc5b6b18a4c9a3114d"
   integrity sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==
   dependencies:
     loose-envify "^1.1.0"
@@ -10204,7 +10204,7 @@ sisteransi@^1.0.5:
 
 skyway-js@^4.4.1:
   version "4.4.1"
-  resolved "https://registry.yarnpkg.com/skyway-js/-/skyway-js-4.4.1.tgz#c8912e720cdb87f54893aa819563aaec37bbf414"
+  resolved "https://registry.npmjs.org/skyway-js/-/skyway-js-4.4.1.tgz"
   integrity sha512-j/Xws/YEKyvM/aFeyXdmzaKiBtoO0J1UICZNysxQiF3j+LqE5Hwf6dpZSRAj4aiz4iQl+Esi+Thm85+gJL1tdQ==
   dependencies:
     "@jitsi/sdp-interop" "^0.1.13"
